@@ -9,11 +9,11 @@ interface GeocodingResult {
   display_name: string;
 }
 
-interface SearchPageProps {
-  onGeocodingResult: (result: GeocodingResult) => void;
-}
+// interface SearchPageProps {
+//   onGeocodingResult: (result: GeocodingResult) => void;
+// }
 
-export default function SearchPage({ onGeocodingResult }: SearchPageProps) {
+export default function SearchPage({ onGeocodingResult }) {
   const [geocodingResult, setGeocodingResult] =
     useState<GeocodingResult | null>(null);
 
