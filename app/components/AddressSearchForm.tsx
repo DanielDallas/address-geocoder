@@ -14,7 +14,9 @@ interface AddressSearchFormProps {
 const AddressSearchForm = ({ onGeocodingResult }: AddressSearchFormProps) => {
   const [address, setAddress] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
     try {
       const response = await axios.get(
@@ -28,19 +30,21 @@ const AddressSearchForm = ({ onGeocodingResult }: AddressSearchFormProps) => {
         onGeocodingResult({ lat, lon, display_name });
       } else {
         // Handle no results found
+        console.log("No results found.");
       }
     } catch (error) {
       // Handle API request error
+      console.error("API request error:", error);
     }
   };
 
   return (
     <div className="flex justify-center items-center">
       <form onSubmit={handleSubmit} className="">
-        <h1 className="lg:mb-20 text-lime-400 text-4xl font-bold tracking-tight sm:text-6xl">
-          Geocoding App
+        <h1 className="lg:mb-20 mb-8 text-lime-400 text-4xl font-bold tracking-tight sm:text-6xl">
+          Address Geocoder
         </h1>
-        <label className="block mb-1">Enter Address:</label>
+        <label className="block lg:mb-1">Enter Address:</label>
         <input
           type="text"
           value={address}
