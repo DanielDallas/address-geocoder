@@ -9,11 +9,7 @@ interface GeocodingResult {
   display_name: string;
 }
 
-interface SearchPageProps {
-  onGeocodingResult: (result: GeocodingResult) => void;
-}
-
-const SearchPage: React.FC<SearchPageProps> = ({ onGeocodingResult }) => {
+export default function SearchPage() {
   const [geocodingResult, setGeocodingResult] =
     useState<GeocodingResult | null>(null);
 
@@ -48,6 +44,4 @@ const SearchPage: React.FC<SearchPageProps> = ({ onGeocodingResult }) => {
       </div>
     </div>
   );
-};
-
-export default SearchPage;
+}
