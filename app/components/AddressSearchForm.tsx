@@ -1,12 +1,20 @@
-"use client";
-
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddressSearchForm = ({ onGeocodingResult }) => {
+interface GeocodingResult {
+  lat: string;
+  lon: string;
+  display_name: string;
+}
+
+interface AddressSearchFormProps {
+  onGeocodingResult: (result: GeocodingResult) => void;
+}
+
+const AddressSearchForm = ({ onGeocodingResult }: AddressSearchFormProps) => {
   const [address, setAddress] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await axios.get(
@@ -27,20 +35,23 @@ const AddressSearchForm = ({ onGeocodingResult }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="my-4">
-        <label className="block mb-2">Enter Address:</label>
+    <div className="flex justify-center items-center">
+      <form onSubmit={handleSubmit} className="">
+        <h1 className="lg:mb-20 text-lime-400 text-4xl font-bold tracking-tight sm:text-6xl">
+          Geocoding App
+        </h1>
+        <label className="block mb-1">Enter Address:</label>
         <input
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="border rounded px-2 py-1"
+          className="border rounded border-lime-500 px-4 py-2"
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white px-3 py-1 rounded ml-2"
+          className="mt-4 bg-lime-800 text-white px-4 py-2 rounded ml-1"
         >
-          Search
+          LookUp
         </button>
       </form>
     </div>
