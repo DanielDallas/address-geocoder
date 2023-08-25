@@ -21,7 +21,11 @@ export default function RootLayout({
         <link rel="icon" href="/grid-globe.png" />
         {/* Other meta tags, stylesheets, etc. */}
       </Head>
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+        {" "}
+        <div className="bg-lime-100">{children}</div>
+      </body>
     </html>
   );
 }
