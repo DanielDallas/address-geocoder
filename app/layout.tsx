@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="./globe.ico" />
+        <link rel="icon" href="/globe.ico" />
         {/* Other meta tags, stylesheets, etc. */}
       </Head>
       <body className={inter.className}>{children}</body>

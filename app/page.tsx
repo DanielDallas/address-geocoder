@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import AddressSearchForm from "./components/AddressSearchForm";
 
@@ -13,7 +11,7 @@ interface SearchPageProps {
   onGeocodingResult: (result: GeocodingResult) => void;
 }
 
-export default function SearchPage({ onGeocodingResult }: SearchPageProps) {
+const SearchPage: React.FC<SearchPageProps> = ({ onGeocodingResult }) => {
   const [geocodingResult, setGeocodingResult] =
     useState<GeocodingResult | null>(null);
 
@@ -48,4 +46,6 @@ export default function SearchPage({ onGeocodingResult }: SearchPageProps) {
       </div>
     </div>
   );
-}
+};
+
+export default SearchPage;
