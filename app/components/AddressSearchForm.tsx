@@ -41,10 +41,10 @@ const AddressSearchForm = ({ onGeocodingResult }: AddressSearchFormProps) => {
   return (
     <div className="flex justify-center items-center">
       <form onSubmit={handleSubmit} className="">
-        <h1 className="lg:mb-20 mb-8 text-lime-400 text-4xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="lg:mb-20 sm:mb-4 text-lime-400 text-4xl font-bold tracking-tight sm:text-6xl">
           Address Geocoder
         </h1>
-        <label className="block lg:mb-1">Enter Address:</label>
+        <label className="block mb-1">Enter Address:</label>
         <input
           type="text"
           value={address}

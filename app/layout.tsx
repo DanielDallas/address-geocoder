@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import Head from "next/head";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -8,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Address Geocoder",
   description: "Built by Daniel Dallas",
+  themeColor: "rgb(163 230 53);",
 };
 
 export default function RootLayout({
@@ -17,11 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/grid-globe.png" />
-        {/* Other meta tags, stylesheets, etc. */}
-      </Head>
-
       <body className={inter.className}>
         {" "}
         <div className="bg-lime-100">{children}</div>
