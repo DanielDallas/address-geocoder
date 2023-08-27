@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Address Geocoder",
   description: "Built by Daniel Dallas",
-  themeColor: "rgb(163 230 53);",
+  themeColor: "rgb(163 230 53)",
 };
 
 export default function RootLayout({
